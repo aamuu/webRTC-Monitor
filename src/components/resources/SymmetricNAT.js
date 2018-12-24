@@ -21,7 +21,7 @@ class SymmetricNAT extends Component {
         if (status === undefined) {
             accorText = "[INFO] Test not run yet";
         } else if (status === "passed") {
-            accorText = "Audio settings are successfully tested";
+            accorText = "Gathered candidate of Type: relay";
         } else {
             accorText = "Please check audio requirements";
         }
@@ -82,6 +82,19 @@ class SymmetricNAT extends Component {
                                                     className="fa fa-check ml-2"
                                                     style={{color: "green"}}
                                                 />)}
+                                            {(status === "passed") ?
+                                                (<div className="alert-success badge-success mr-4"
+                                                      style={{fontSize: "14px"}}>
+                                                    <strong>[SUCCESS]</strong> <br/>
+                                                    Gathered candidate of Type: relay
+                                                </div>) : null}
+
+                                            {(status === "failed") ?
+                                                (<div className="alert alert-danger mr-4" style={{fontSize: "14px"}}>
+                                                    <strong>[ERROR]</strong> <br/>
+                                                    <strong>[SUCCESS]</strong> <br/>
+                                                    Failed to gathered candidate of Type: relay
+                                                </div>) : null}
                                         </div>
                                     </div>
                                 </div>
@@ -116,6 +129,18 @@ class SymmetricNAT extends Component {
                                                     className="fa fa-check ml-2"
                                                     style={{color: "green"}}
                                                 />)}
+                                            {(status === "passed") ?
+                                                (<div className="alert-success badge-success mr-4"
+                                                      style={{fontSize: "14px"}}>
+                                                    <strong>[SUCCESS]</strong> <br/>
+                                                    Gathered candidate of Type: srflx
+                                                </div>) : null}
+
+                                            {(status === "failed") ?
+                                                (<div className="alert alert-danger mr-4" style={{fontSize: "14px"}}>
+                                                    <strong>[ERROR]</strong> <br/>
+                                                    Failed to gathered candidate of Type: srflx
+                                                </div>) : null}
                                         </div>
                                     </div>
                                 </div>

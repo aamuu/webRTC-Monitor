@@ -88,6 +88,18 @@ class Connectivity extends Component {
                                                     className="fa fa-check ml-2"
                                                     style={{color: "green"}}
                                                 />)}
+                                            {(status === "passed") ?
+                                                (<div className="alert-success badge-success mr-4"
+                                                      style={{fontSize: "14px"}}>
+                                                    <strong>[SUCCESS]</strong> <br/>
+                                                    Data successfully transmitted between peers.
+                                                </div>) : null}
+
+                                            {(status === "failed") ?
+                                                (<div className="alert alert-danger mr-4" style={{fontSize: "14px"}}>
+                                                    <strong>[ERROR]</strong> <br/>
+                                                    Failed to transfer data between peers.
+                                                </div>) : null}
                                         </div>
                                     </div>
                                 </div>
@@ -122,6 +134,18 @@ class Connectivity extends Component {
                                                     className="fa fa-check ml-2"
                                                     style={{color: "green"}}
                                                 />)}
+                                            {(status === "passed") ?
+                                                (<div className="alert-success badge-success mr-4"
+                                                      style={{fontSize: "14px"}}>
+                                                    <strong>[SUCCESS]</strong> <br/>
+                                                    Data successfully transmitted between peers.
+                                                </div>) : null}
+
+                                            {(status === "failed") ?
+                                                (<div className="alert alert-danger mr-4" style={{fontSize: "14px"}}>
+                                                    <strong>[ERROR]</strong> <br/>
+                                                    Failed to transfer data between peers.
+                                                </div>) : null}
                                         </div>
                                     </div>
                                 </div>

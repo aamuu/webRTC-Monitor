@@ -76,7 +76,7 @@ class Video extends Component {
                                          data-parent="#v-accordionExample">
                                         <div className="card-body ml-5">
                                             {test ? accorTest : accorText}
-                                            {(band || status === "failed") || (band || status === undefined) ? (
+                                            {(status === "failed") || (status === undefined) ? (
                                                 <i className="fa fa-times ml-2" style={{color: "red"}}/>) : (
                                                 <i
                                                     className="fa fa-check ml-2"
