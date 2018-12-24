@@ -124,40 +124,6 @@ class Connectivity extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="card">
-                                    <div className="card-body" id="n-headingThree">
-                                        <h5 className="mb-0">
-                                            <button
-                                                className="btn btn-link collapsed"
-                                                type="button"
-                                                data-toggle="collapse"
-                                                data-target="#n-collapseThree"
-                                                aria-expanded="false"
-                                                aria-controls="n-collapseThree">
-                                                IPV6 Enabled
-                                            </button>
-                                        </h5>
-                                    </div>
-                                    <div
-                                        id="n-collapseThree"
-                                        className={
-                                            status === "passed"
-                                                ? "collapse show"
-                                                : "collapse"
-                                        }
-                                        aria-labelledby="n-headingThree"
-                                        data-parent="#n-accordionExample">
-                                        <div className="card-body ml-5">
-                                            {test ? accorTest : accorText}
-                                            {(status === "failed") || (status === undefined) ? (
-                                                <i className="fa fa-times ml-2" style={{color: "red"}}/>) : (
-                                                <i
-                                                    className="fa fa-check ml-2"
-                                                    style={{color: "green"}}
-                                                />)}
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     ) : null}

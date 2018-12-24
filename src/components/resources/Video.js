@@ -83,9 +83,9 @@ class Video extends Component {
                                                 (<div className="alert-success badge-success mr-4"
                                                       style={{fontSize: "14px"}}>
                                                     <strong>[SUCCESS]</strong> <br/>
-                                                    {log.packetLoss} <br/>
-                                                    {log.RTTAvg} <br/>
-                                                    {log.sendAvg}
+                                                    <div className="text-center" style={{fontSize: "14px"}}>Video
+                                                        setting successfully tested
+                                                    </div>
                                                 </div>) : null}
 
                                             {(status === "failed") ?
@@ -127,9 +127,11 @@ class Video extends Component {
                                                 (<div className="alert-success badge-success mr-4"
                                                       style={{fontSize: "14px"}}>
                                                     <strong>[SUCCESS]</strong> <br/>
-                                                    {log.packetLoss} <br/>
-                                                    {log.RTTAvg} <br/>
-                                                    {log.sendAvg}
+                                                    <ol>
+                                                        <li>{log.packetLoss}</li>
+                                                        <li>{log.RTTAvg}</li>
+                                                        <li>{log.sendAvg}</li>
+                                                    </ol>
                                                 </div>) : null}
 
                                             {(band === "failed") ?
