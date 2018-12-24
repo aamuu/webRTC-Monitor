@@ -14,6 +14,7 @@ class Connectivity extends Component {
     render() {
         const {name, status, test} = this.props;
         //const { showResourceInfo } = this.state;
+        //console.log("=====================", status);
 
         let componentStyle;
         let active = <Active/>;

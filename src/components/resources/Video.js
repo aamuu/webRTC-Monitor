@@ -24,10 +24,14 @@ class Video extends Component {
             accorText = "[INFO] Test not run yet";
         } else if (status === "passed") {
             accorText = "Audio settings are successfully tested";
-        } else {
+        } else if (band === "failed") {
+            accorText = "Please correct audio settings";
+        }
+        else {
             accorText = "Please check audio requirements";
         }
-        if (status && band === "passed") {
+        if (band && status === "passed") {
+            console.log("--------------", status && band);
             componentStyle = "card mx-auto bg-success mt-2";
         } else if (status || band === "failed") {
             componentStyle = "card mx-auto bg-danger mt-2";
@@ -72,14 +76,14 @@ class Video extends Component {
                                          data-parent="#v-accordionExample">
                                         <div className="card-body ml-5">
                                             {test ? accorTest : accorText}
-                                            {(status === "failed") || (status === undefined) ? (
+                                            {(band || status === "failed") || (band || status === undefined) ? (
                                                 <i className="fa fa-times ml-2" style={{color: "red"}}/>) : (
                                                 <i
                                                     className="fa fa-check ml-2"
                                                     style={{color: "green"}}
                                                 />)}
 
-                                            {(status === "passed") ?
+                                            {(band && status === "passed") ?
                                                 (<div className="alert-success badge-success mr-4"
                                                       style={{fontSize: "14px"}}>
                                                     <strong>[SUCCESS]</strong> <br/>
@@ -88,7 +92,7 @@ class Video extends Component {
                                                     </div>
                                                 </div>) : null}
 
-                                            {(status === "failed") ?
+                                            {(band && status === "failed") ?
                                                 (<div className="alert alert-danger mr-4" style={{fontSize: "14px"}}>
                                                     <strong>[ERROR]</strong> <br/>
                                                     {log.message}
