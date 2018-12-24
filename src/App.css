@@ -1,0 +1,9 @@
+.navbar {
+    width: 70%;
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 0rem;
+}
