@@ -11851,7 +11851,7 @@ var AudioBandwidthTest = function (_Test) {
       this.addLog('info', 'RTT average: ' + stats.rttAverage.toFixed(2) + ' ms');
       this.addLog('info', 'RTT max: ' + stats.rttMax + ' ms');
       this.addLog('info', 'Packets sent: ' + stats.rttMax + ' ms');
-      this.addLog('info', 'Packet loss %: ' + stats.packetLoss);
+      this.addLog('info', 'Packet loss %: ' + stats.packetLoss.toFixed(2));
       return this.results;
     }
   }, {
@@ -12748,7 +12748,7 @@ var VideoBandwidthTest = function (_Test) {
 
       this.addLog('info', 'RTT average: ' + stats.rttAverage.toFixed(2) + ' ms');
       this.addLog('info', 'RTT max: ' + stats.rttMax + ' ms');
-      this.addLog('info', 'Packet Loss %: ' + stats.packetLoss);
+      this.addLog('info', 'Packet Loss %: ' + stats.packetLoss.toFixed(2));
       return this.results;
     }
   }, {
@@ -12756,7 +12756,9 @@ var VideoBandwidthTest = function (_Test) {
     value: function destroy() {
       _get(VideoBandwidthTest.prototype.__proto__ || Object.getPrototypeOf(VideoBandwidthTest.prototype), 'destroy', this).call(this);
       window.clearTimeout(this.nextTimeout);
-      if (this.call) {
+        this.localStream.stop();
+
+        if (this.call) {
         this.call.close();
         this.call = null;
       }

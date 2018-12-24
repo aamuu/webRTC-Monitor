@@ -25,9 +25,9 @@ class Audio extends Component {
         } else {
             accorText = "Please check audio requirements";
         }
-        if (status === "passed") {
+        if (status && band === "passed") {
             componentStyle = "card mx-auto bg-success mt-2";
-        } else if (status === "failed") {
+        } else if (status || band === "failed") {
             componentStyle = "card mx-auto bg-danger mt-2";
         } else {
             componentStyle = "card mx-auto mt-2";
